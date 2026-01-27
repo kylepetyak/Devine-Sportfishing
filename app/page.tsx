@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import {
   TripCard,
-  TestimonialCard,
   PlaceholderImage,
   PLACEHOLDER_TESTIMONIALS,
 } from '@/components'
@@ -10,6 +9,9 @@ import AnimatedSection from '@/components/AnimatedSection'
 import { StaggerContainer, StaggerItem } from '@/components/StaggerContainer'
 import WaveDivider from '@/components/WaveDivider'
 import AnimatedCounter from '@/components/AnimatedCounter'
+import HorizontalSpeciesGallery from '@/components/HorizontalSpeciesGallery'
+import TestimonialCarousel3D from '@/components/TestimonialCarousel3D'
+import AnimatedHeadline from '@/components/AnimatedHeadline'
 import { TRIPS, SPECIES, WHY_CHOOSE_US, SPONSORS, SITE_CONFIG } from '@/lib/constants'
 import { MapPin, Heart, ShieldCheck, Star, ArrowRight, Phone } from 'lucide-react'
 
@@ -19,6 +21,18 @@ const iconMap = {
   'shield-check': ShieldCheck,
   star: Star,
 }
+
+// Add season info to species for the gallery
+const offshoreSpeciesWithSeason = SPECIES.offshore.map((s) => ({
+  ...s,
+  peak: s.name === 'Yellowfin Tuna' ? 'Nov-Mar' : undefined,
+  season: s.name !== 'Yellowfin Tuna' ? 'Year-round' : undefined,
+}))
+
+const inshoreSpeciesWithSeason = SPECIES.inshore.map((s) => ({
+  ...s,
+  season: 'Year-round',
+}))
 
 export default function HomePage() {
   return (
@@ -34,9 +48,12 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-ocean-deep mb-6">
+              <AnimatedHeadline
+                as="h2"
+                className="text-3xl md:text-4xl font-heading font-bold text-ocean-deep mb-6"
+              >
                 Meet Captain Blake & Captain Lakelynn
-              </h2>
+              </AnimatedHeadline>
               <p className="text-gray-600 text-lg mb-6 leading-relaxed">
                 We&apos;re Blake and Lakelynn Devine - a husband-and-wife captain team born and raised
                 in the bayous of South Louisiana. With 7+ years of guiding experience in Venice and
@@ -79,9 +96,12 @@ export default function HomePage() {
       <AnimatedSection className="py-20 bg-ocean-deep">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+            <AnimatedHeadline
+              as="h2"
+              className="text-3xl md:text-4xl font-heading font-bold text-white mb-4"
+            >
               Choose Your Adventure
-            </h2>
+            </AnimatedHeadline>
             <p className="text-white/70 text-lg max-w-2xl mx-auto">
               From world-class offshore tuna fishing to peaceful marsh excursions,
               we have the perfect trip for every angler.
@@ -160,9 +180,12 @@ export default function HomePage() {
       <AnimatedSection className="py-20 bg-ocean-mid text-white">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+            <AnimatedHeadline
+              as="h2"
+              className="text-3xl md:text-4xl font-heading font-bold mb-4"
+            >
               Why Choose Devine Sportfishing?
-            </h2>
+            </AnimatedHeadline>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
               We&apos;re not just another charter service. Here&apos;s what sets us apart.
             </p>
@@ -188,103 +211,64 @@ export default function HomePage() {
       </AnimatedSection>
 
       {/* Wave Divider */}
-      <WaveDivider fill="#f8f9fa" />
+      <WaveDivider fill="#0f2744" />
 
-      {/* Testimonials Section */}
-      <AnimatedSection className="py-20 bg-light">
+      {/* Testimonials Section - 3D Carousel */}
+      <section className="py-20 bg-ocean-dark">
         <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-ocean-deep mb-4">
+          <div className="text-center mb-8">
+            <AnimatedHeadline
+              as="h2"
+              className="text-3xl md:text-4xl font-heading font-bold text-white mb-4"
+            >
               What Our Guests Say
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            </AnimatedHeadline>
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
               Don&apos;t just take our word for it. Here&apos;s what anglers have to say about
               their Devine Sportfishing experience.
             </p>
           </div>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {PLACEHOLDER_TESTIMONIALS.map((testimonial, index) => (
-              <StaggerItem key={index}>
-                <TestimonialCard
-                  quote={testimonial.quote}
-                  author={testimonial.author}
-                  location={testimonial.location}
-                  rating={testimonial.rating}
-                  tripType={testimonial.tripType}
-                />
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-
-          <div className="text-center mt-8">
-            <p className="text-gray-500 text-sm">
-              Google Reviews integration coming soon
-            </p>
-          </div>
+          <TestimonialCarousel3D
+            testimonials={PLACEHOLDER_TESTIMONIALS}
+            autoRotate={true}
+            interval={5000}
+          />
         </div>
-      </AnimatedSection>
+      </section>
 
-      {/* Species Section */}
-      <AnimatedSection className="py-20 bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-ocean-deep mb-4">
+      {/* Wave Divider */}
+      <WaveDivider fill="#ffffff" />
+
+      {/* Species Section - Horizontal Scroll Gallery */}
+      <section className="py-20 bg-white">
+        <div className="container-custom mb-8">
+          <div className="text-center">
+            <AnimatedHeadline
+              as="h2"
+              className="text-3xl md:text-4xl font-heading font-bold text-ocean-deep mb-4"
+            >
               What You&apos;ll Catch
-            </h2>
+            </AnimatedHeadline>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               Venice, Louisiana offers some of the most diverse fishing in the world.
               Here&apos;s what&apos;s waiting for you.
             </p>
           </div>
-
-          {/* Offshore Species */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-heading font-bold text-ocean-deep mb-6 text-center">
-              Offshore Species
-            </h3>
-            <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {SPECIES.offshore.map((species, index) => (
-                <StaggerItem key={index}>
-                  <div className="group">
-                    <PlaceholderImage
-                      category="fish"
-                      label={species.name}
-                      aspectRatio="4:3"
-                      className="rounded-lg mb-2"
-                    />
-                    <h4 className="font-semibold text-gray-900">{species.name}</h4>
-                    <p className="text-sm text-gray-500">{species.description}</p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-
-          {/* Inshore Species */}
-          <div>
-            <h3 className="text-2xl font-heading font-bold text-ocean-deep mb-6 text-center">
-              Inshore Species
-            </h3>
-            <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {SPECIES.inshore.map((species, index) => (
-                <StaggerItem key={index}>
-                  <div className="group">
-                    <PlaceholderImage
-                      category="fish"
-                      label={species.name}
-                      aspectRatio="4:3"
-                      className="rounded-lg mb-2"
-                    />
-                    <h4 className="font-semibold text-gray-900">{species.name}</h4>
-                    <p className="text-sm text-gray-500">{species.description}</p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
         </div>
-      </AnimatedSection>
+
+        {/* Offshore Species Gallery */}
+        <HorizontalSpeciesGallery
+          species={offshoreSpeciesWithSeason}
+          title="Offshore Species"
+        />
+
+        {/* Inshore Species Gallery */}
+        <HorizontalSpeciesGallery
+          species={inshoreSpeciesWithSeason}
+          title="Inshore Species"
+        />
+      </section>
 
       {/* Wave Divider */}
       <WaveDivider fill="#0a1628" flip />
@@ -292,9 +276,12 @@ export default function HomePage() {
       {/* CTA Section */}
       <AnimatedSection className="py-20 bg-gradient-to-br from-ocean-deep via-ocean-dark to-ocean-mid text-white">
         <div className="container-custom text-center">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+          <AnimatedHeadline
+            as="h2"
+            className="text-3xl md:text-4xl font-heading font-bold mb-6"
+          >
             Ready for the Fishing Adventure of a Lifetime?
-          </h2>
+          </AnimatedHeadline>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Book your charter today and experience world-class fishing in Venice, Louisiana.
           </p>
