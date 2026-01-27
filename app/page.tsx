@@ -1,39 +1,40 @@
 import Link from 'next/link'
 import {
-  Hero,
   TripCard,
   TestimonialCard,
   PlaceholderImage,
   PLACEHOLDER_TESTIMONIALS,
 } from '@/components'
+import ParallaxHero from '@/components/ParallaxHero'
+import AnimatedSection from '@/components/AnimatedSection'
+import { StaggerContainer, StaggerItem } from '@/components/StaggerContainer'
+import WaveDivider from '@/components/WaveDivider'
+import AnimatedCounter from '@/components/AnimatedCounter'
 import { TRIPS, SPECIES, WHY_CHOOSE_US, SPONSORS, SITE_CONFIG } from '@/lib/constants'
 import { MapPin, Heart, ShieldCheck, Star, ArrowRight, Phone } from 'lucide-react'
 
 const iconMap = {
   'map-pin': MapPin,
-  'heart': Heart,
+  heart: Heart,
   'shield-check': ShieldCheck,
-  'star': Star,
+  star: Star,
 }
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero Section */}
-      <Hero
-        title="Devine Sportfishing"
-        subtitle="Premier Fishing Charters in Venice, Louisiana - The Fishing Capital of the World"
-        showCTA={true}
-        showPhone={true}
-        size="full"
-      />
+      {/* Parallax Hero Section */}
+      <ParallaxHero />
+
+      {/* Wave Divider */}
+      <WaveDivider fill="#f8f9fa" />
 
       {/* About Preview Section */}
-      <section className="section bg-white">
+      <AnimatedSection className="py-20 bg-light">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-6">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-ocean-deep mb-6">
                 Meet Captain Blake & Captain Lakelynn
               </h2>
               <p className="text-gray-600 text-lg mb-6 leading-relaxed">
@@ -47,7 +48,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="/about"
-                className="inline-flex items-center text-primary font-semibold text-lg hover:text-accent transition-colors"
+                className="inline-flex items-center text-ocean-mid font-semibold text-lg hover:text-gold transition-colors"
               >
                 Learn More About Us
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -69,53 +70,94 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
+
+      {/* Wave Divider */}
+      <WaveDivider fill="#0a1628" flip />
 
       {/* Trip Options Section */}
-      <section className="section bg-gray-50">
+      <AnimatedSection className="py-20 bg-ocean-deep">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
               Choose Your Adventure
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
               From world-class offshore tuna fishing to peaceful marsh excursions,
               we have the perfect trip for every angler.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <TripCard
-              name={TRIPS.offshore.name}
-              slug={TRIPS.offshore.slug}
-              price={TRIPS.offshore.priceDisplay}
-              duration={TRIPS.offshore.duration}
-              capacity={TRIPS.offshore.capacity}
-              description={TRIPS.offshore.description}
-              featured={true}
-            />
-            <TripCard
-              name={TRIPS.inshore.name}
-              slug={TRIPS.inshore.slug}
-              price={TRIPS.inshore.priceDisplay}
-              duration={TRIPS.inshore.duration}
-              capacity={TRIPS.inshore.capacity}
-              description={TRIPS.inshore.description}
-            />
-            <TripCard
-              name={TRIPS.custom.name}
-              slug={TRIPS.custom.slug}
-              price={TRIPS.custom.priceDisplay}
-              duration={TRIPS.custom.duration}
-              capacity={TRIPS.custom.capacity}
-              description={TRIPS.custom.description}
-            />
-          </div>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <StaggerItem>
+              <TripCard
+                name={TRIPS.offshore.name}
+                slug={TRIPS.offshore.slug}
+                price={TRIPS.offshore.priceDisplay}
+                duration={TRIPS.offshore.duration}
+                capacity={TRIPS.offshore.capacity}
+                description={TRIPS.offshore.description}
+                featured={true}
+              />
+            </StaggerItem>
+            <StaggerItem>
+              <TripCard
+                name={TRIPS.inshore.name}
+                slug={TRIPS.inshore.slug}
+                price={TRIPS.inshore.priceDisplay}
+                duration={TRIPS.inshore.duration}
+                capacity={TRIPS.inshore.capacity}
+                description={TRIPS.inshore.description}
+              />
+            </StaggerItem>
+            <StaggerItem>
+              <TripCard
+                name={TRIPS.custom.name}
+                slug={TRIPS.custom.slug}
+                price={TRIPS.custom.priceDisplay}
+                duration={TRIPS.custom.duration}
+                capacity={TRIPS.custom.capacity}
+                description={TRIPS.custom.description}
+              />
+            </StaggerItem>
+          </StaggerContainer>
         </div>
-      </section>
+      </AnimatedSection>
+
+      {/* Stats Section */}
+      <AnimatedSection className="py-16 bg-ocean-dark">
+        <div className="container-custom">
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <StaggerItem>
+              <div className="text-4xl md:text-5xl font-bold text-gold">
+                <AnimatedCounter target={7} suffix="+" />
+              </div>
+              <div className="text-white/70 mt-2">Years Experience</div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="text-4xl md:text-5xl font-bold text-gold">
+                <AnimatedCounter target={220} suffix=" lbs" />
+              </div>
+              <div className="text-white/70 mt-2">Biggest Tuna</div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="text-4xl md:text-5xl font-bold text-gold">
+                <AnimatedCounter target={2} />
+              </div>
+              <div className="text-white/70 mt-2">Licensed Captains</div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="text-4xl md:text-5xl font-bold text-gold">
+                <AnimatedCounter target={100} suffix="%" />
+              </div>
+              <div className="text-white/70 mt-2">Satisfaction</div>
+            </StaggerItem>
+          </StaggerContainer>
+        </div>
+      </AnimatedSection>
 
       {/* Why Choose Us Section */}
-      <section className="section bg-primary text-white">
+      <AnimatedSection className="py-20 bg-ocean-mid text-white">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
@@ -126,28 +168,33 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {WHY_CHOOSE_US.map((item, index) => {
               const Icon = iconMap[item.icon as keyof typeof iconMap]
               return (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon className="h-8 w-8 text-white" />
+                <StaggerItem key={index}>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Icon className="h-8 w-8 text-ocean-deep" />
+                    </div>
+                    <h3 className="text-xl font-heading font-bold mb-3">{item.title}</h3>
+                    <p className="text-white/80">{item.description}</p>
                   </div>
-                  <h3 className="text-xl font-heading font-bold mb-3">{item.title}</h3>
-                  <p className="text-white/80">{item.description}</p>
-                </div>
+                </StaggerItem>
               )
             })}
-          </div>
+          </StaggerContainer>
         </div>
-      </section>
+      </AnimatedSection>
+
+      {/* Wave Divider */}
+      <WaveDivider fill="#f8f9fa" />
 
       {/* Testimonials Section */}
-      <section className="section bg-gray-50">
+      <AnimatedSection className="py-20 bg-light">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-ocean-deep mb-4">
               What Our Guests Say
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -156,18 +203,19 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {PLACEHOLDER_TESTIMONIALS.map((testimonial, index) => (
-              <TestimonialCard
-                key={index}
-                quote={testimonial.quote}
-                author={testimonial.author}
-                location={testimonial.location}
-                rating={testimonial.rating}
-                tripType={testimonial.tripType}
-              />
+              <StaggerItem key={index}>
+                <TestimonialCard
+                  quote={testimonial.quote}
+                  author={testimonial.author}
+                  location={testimonial.location}
+                  rating={testimonial.rating}
+                  tripType={testimonial.tripType}
+                />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
 
           <div className="text-center mt-8">
             <p className="text-gray-500 text-sm">
@@ -175,13 +223,13 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      {/* Species/What You'll Catch Section */}
-      <section className="section bg-white">
+      {/* Species Section */}
+      <AnimatedSection className="py-20 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-ocean-deep mb-4">
               What You&apos;ll Catch
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -192,50 +240,57 @@ export default function HomePage() {
 
           {/* Offshore Species */}
           <div className="mb-12">
-            <h3 className="text-2xl font-heading font-bold text-primary mb-6 text-center">
+            <h3 className="text-2xl font-heading font-bold text-ocean-deep mb-6 text-center">
               Offshore Species
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {SPECIES.offshore.map((species, index) => (
-                <div key={index} className="group">
-                  <PlaceholderImage
-                    category="fish"
-                    label={species.name}
-                    aspectRatio="4:3"
-                    className="rounded-lg mb-2"
-                  />
-                  <h4 className="font-semibold text-gray-900">{species.name}</h4>
-                  <p className="text-sm text-gray-500">{species.description}</p>
-                </div>
+                <StaggerItem key={index}>
+                  <div className="group">
+                    <PlaceholderImage
+                      category="fish"
+                      label={species.name}
+                      aspectRatio="4:3"
+                      className="rounded-lg mb-2"
+                    />
+                    <h4 className="font-semibold text-gray-900">{species.name}</h4>
+                    <p className="text-sm text-gray-500">{species.description}</p>
+                  </div>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
 
           {/* Inshore Species */}
           <div>
-            <h3 className="text-2xl font-heading font-bold text-primary mb-6 text-center">
+            <h3 className="text-2xl font-heading font-bold text-ocean-deep mb-6 text-center">
               Inshore Species
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {SPECIES.inshore.map((species, index) => (
-                <div key={index} className="group">
-                  <PlaceholderImage
-                    category="fish"
-                    label={species.name}
-                    aspectRatio="4:3"
-                    className="rounded-lg mb-2"
-                  />
-                  <h4 className="font-semibold text-gray-900">{species.name}</h4>
-                  <p className="text-sm text-gray-500">{species.description}</p>
-                </div>
+                <StaggerItem key={index}>
+                  <div className="group">
+                    <PlaceholderImage
+                      category="fish"
+                      label={species.name}
+                      aspectRatio="4:3"
+                      className="rounded-lg mb-2"
+                    />
+                    <h4 className="font-semibold text-gray-900">{species.name}</h4>
+                    <p className="text-sm text-gray-500">{species.description}</p>
+                  </div>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
+
+      {/* Wave Divider */}
+      <WaveDivider fill="#0a1628" flip />
 
       {/* CTA Section */}
-      <section className="section bg-gradient-hero text-white">
+      <AnimatedSection className="py-20 bg-gradient-to-br from-ocean-deep via-ocean-dark to-ocean-mid text-white">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
             Ready for the Fishing Adventure of a Lifetime?
@@ -244,38 +299,41 @@ export default function HomePage() {
             Book your charter today and experience world-class fishing in Venice, Louisiana.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/contact" className="btn-primary text-lg px-8 py-4">
+            <Link
+              href="/contact"
+              className="px-8 py-4 bg-gold hover:bg-gold-light text-ocean-deep font-bold rounded-lg transition-all hover:scale-105 hover:shadow-xl"
+            >
               Book Your Trip
             </Link>
             <a
               href={SITE_CONFIG.phoneLink}
-              className="flex items-center text-xl font-semibold text-white hover:text-accent transition-colors"
+              className="flex items-center text-xl font-semibold text-white hover:text-gold transition-colors"
             >
               <Phone className="h-6 w-6 mr-2" />
               {SITE_CONFIG.phone}
             </a>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Sponsors Section */}
-      <section className="py-12 bg-white">
+      <AnimatedSection className="py-12 bg-ocean-dark">
         <div className="container-custom">
-          <h3 className="text-center text-gray-400 text-sm font-medium uppercase tracking-wider mb-8">
+          <h3 className="text-center text-white/40 text-sm font-medium uppercase tracking-wider mb-8">
             Proudly Sponsored By
           </h3>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             {SPONSORS.map((sponsor, index) => (
               <div
                 key={index}
-                className="w-24 h-12 bg-gray-100 rounded flex items-center justify-center text-gray-400 text-xs font-medium"
+                className="w-24 h-12 bg-white/10 rounded flex items-center justify-center text-white/50 text-xs font-medium"
               >
                 {sponsor.name}
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
     </>
   )
 }
