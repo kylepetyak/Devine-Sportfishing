@@ -9,6 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // New ocean-themed palette
+        ocean: {
+          deep: '#0a1628',
+          dark: '#0f2744',
+          mid: '#1a4971',
+          light: '#2e86ab',
+          bright: '#61b3de',
+        },
+        sunset: {
+          dark: '#c44536',
+          DEFAULT: '#e94560',
+          light: '#ff6b6b',
+        },
+        gold: {
+          DEFAULT: '#f4a127',
+          light: '#ffc857',
+        },
+        // Keep existing colors for compatibility
         primary: {
           DEFAULT: '#1e3a5f',
           50: '#f0f5fa',
@@ -58,11 +76,18 @@ const config: Config = {
         heading: ['Montserrat', 'sans-serif'],
         body: ['Open Sans', 'system-ui', 'sans-serif'],
       },
+      animation: {
+        wave: 'wave 20s linear infinite',
+      },
+      keyframes: {
+        wave: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require('@tailwindcss/typography')],
 }
 
 export default config

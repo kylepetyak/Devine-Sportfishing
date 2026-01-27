@@ -120,7 +120,7 @@ export default function ContactPage() {
                   All anglers 16+ need a valid Louisiana fishing license.
                 </p>
                 <a
-                  href="https://www.wlf.louisiana.gov/page/recreational-fishing-licenses"
+                  href="https://www.wlf.louisiana.gov/page/recreational-fishing-licenses-and-permits"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-sm text-amber-800 font-semibold hover:text-amber-900"

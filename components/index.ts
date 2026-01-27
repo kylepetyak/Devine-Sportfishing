@@ -7,6 +7,20 @@ export { default as ContactForm } from './ContactForm'
 export { default as PlaceholderImage, GalleryPlaceholder } from './PlaceholderImage'
 export { default as Gallery } from './Gallery'
 export { default as LocationLandingPage } from './LocationLandingPage'
+
+// Animation components
+export { default as ParallaxHero } from './ParallaxHero'
+export { default as AnimatedSection } from './AnimatedSection'
+export { StaggerContainer, StaggerItem } from './StaggerContainer'
+export { default as WaveDivider } from './WaveDivider'
+export { default as AnimatedCounter } from './AnimatedCounter'
+export { default as Button } from './Button'
+
+// Advanced animation components
+export { default as HorizontalSpeciesGallery } from './HorizontalSpeciesGallery'
+export { default as TestimonialCarousel3D } from './TestimonialCarousel3D'
+export { default as AnimatedHeadline, AnimatedTextChars, AnimatedHighlight } from './AnimatedHeadline'
+
 export {
   generateMetadata,
   LocalBusinessSchema,
