@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Header, Footer, LocalBusinessSchema } from '@/components'
 import { SITE_CONFIG } from '@/lib/constants'
-import { SmoothScrollProvider } from './providers'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -72,11 +71,9 @@ export default function RootLayout({
         <LocalBusinessSchema />
       </head>
       <body className="flex flex-col min-h-screen bg-ocean-deep">
-        <SmoothScrollProvider>
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </SmoothScrollProvider>
+        <Header />
+        <main className="flex-grow">{children}</main>
+        <Footer />
       </body>
     </html>
   )
