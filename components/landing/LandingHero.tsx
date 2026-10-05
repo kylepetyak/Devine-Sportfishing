@@ -26,12 +26,9 @@ export function LandingHero() {
           src="/images/gallery/hero-bg.jpg"
           alt="Venice Louisiana fishing"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
-          onError={(e) => {
-            const target = e.target as HTMLImageElement
-            target.src = 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1920&q=80'
-          }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ocean-deep/90 via-ocean-deep/70 to-ocean-deep/50" />
       </div>

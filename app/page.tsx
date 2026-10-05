@@ -36,12 +36,12 @@ const TESTIMONIALS = [
 ]
 
 const GALLERY_IMAGES = [
-  { src: '/images/gallery/catch-01.jpg', alt: 'Trophy yellowfin tuna catch' },
-  { src: '/images/gallery/catch-02.jpg', alt: 'Happy customers with redfish' },
-  { src: '/images/gallery/catch-03.jpg', alt: 'Marlin fishing action' },
-  { src: '/images/gallery/catch-04.jpg', alt: 'Family fishing trip' },
-  { src: '/images/gallery/catch-05.jpg', alt: 'Sunset on the water' },
-  { src: '/images/gallery/catch-06.jpg', alt: 'Big catch celebration' },
+  { src: '/images/gallery/catch-01.jpg', alt: 'Captain Lakelynn and Captain Blake with a big yellowfin tuna' },
+  { src: '/images/gallery/catch-02.jpg', alt: 'Angler with a big swordfish' },
+  { src: '/images/gallery/catch-03.jpg', alt: 'Colorful mahi mahi catch' },
+  { src: '/images/gallery/catch-04.jpg', alt: 'Customer holding a huge red snapper' },
+  { src: '/images/gallery/catch-05.jpg', alt: 'Group holding a big wahoo' },
+  { src: '/images/gallery/catch-06.jpg', alt: 'Captain Lakelynn tagging and releasing a blue marlin' },
 ]
 
 export default function HomePage() {
@@ -101,6 +101,7 @@ export default function HomePage() {
                   src="/images/trips/offshore-fishing.jpg"
                   alt="Offshore fishing charter"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -143,6 +144,7 @@ export default function HomePage() {
                   src="/images/trips/inshore-fishing.jpg"
                   alt="Inshore fishing charter"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -182,6 +184,7 @@ export default function HomePage() {
                   src="/images/trips/custom-trip.jpg"
                   alt="Custom fishing trip"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -223,6 +226,7 @@ export default function HomePage() {
           src="/images/gallery/boat-action.jpg"
           alt="Fishing action on the water"
           fill
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
@@ -248,6 +252,7 @@ export default function HomePage() {
                       src="/images/captains/blake-devine.jpg"
                       alt="Captain Blake Devine"
                       fill
+                      sizes="(max-width: 1024px) 50vw, 25vw"
                       className="object-cover"
                     />
                   </div>
@@ -258,6 +263,7 @@ export default function HomePage() {
                       src="/images/captains/lakelynn-devine.jpg"
                       alt="Captain Lakelynn Devine"
                       fill
+                      sizes="(max-width: 1024px) 50vw, 25vw"
                       className="object-cover"
                     />
                   </div>
@@ -342,6 +348,7 @@ export default function HomePage() {
                 src={image.src}
                 alt={image.alt}
                 fill
+                sizes="288px"
                 className="object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors" />
@@ -370,6 +377,7 @@ export default function HomePage() {
                   src="/images/species/offshore-species.jpg"
                   alt="Offshore species"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep to-transparent" />
@@ -397,6 +405,7 @@ export default function HomePage() {
                   src="/images/species/inshore-species.jpg"
                   alt="Inshore species"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ocean-light to-transparent" />
@@ -452,6 +461,7 @@ export default function HomePage() {
                       src={testimonial.image}
                       alt={testimonial.name}
                       fill
+                      sizes="48px"
                       className="object-cover"
                     />
                   </div>
@@ -490,6 +500,7 @@ export default function HomePage() {
           src="/images/gallery/sunset-boat.jpg"
           alt="Sunset fishing"
           fill
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-ocean-deep/80" />
@@ -524,17 +535,27 @@ export default function HomePage() {
           <h3 className="text-center text-white/40 text-sm font-medium uppercase tracking-wider mb-8">
             Proudly Sponsored By
           </h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            {SPONSORS.map((sponsor, index) => (
-              <div key={index} className="relative w-24 h-12">
-                <Image
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  fill
-                  className="object-contain opacity-50 hover:opacity-100 transition-opacity"
-                />
-              </div>
-            ))}
+          <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 md:gap-x-14">
+            {SPONSORS.map((sponsor) =>
+              sponsor.logo ? (
+                <div key={sponsor.name} className="relative w-24 h-12">
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    fill
+                    sizes="96px"
+                    className="object-contain opacity-50 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              ) : (
+                <span
+                  key={sponsor.name}
+                  className="font-heading font-extrabold uppercase tracking-widest text-white/40 hover:text-white/80 transition-colors text-sm md:text-base"
+                >
+                  {sponsor.name}
+                </span>
+              )
+            )}
           </div>
         </div>
       </section>

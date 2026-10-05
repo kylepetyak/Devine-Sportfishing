@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ContactForm, PlaceholderImage } from '@/components'
-import { SITE_CONFIG } from '@/lib/constants'
+import { SITE_CONFIG, TRIP_IMAGES } from '@/lib/constants'
 import { Phone, Check } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -29,6 +29,9 @@ export default function CustomTripPage() {
           category="trip"
           label="Custom Fishing Experience"
           aspectRatio="21:9"
+          src={TRIP_IMAGES.custom.hero}
+          sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <div className="text-center text-white px-4">

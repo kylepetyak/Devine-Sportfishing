@@ -1,7 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Send, Loader2, CheckCircle } from 'lucide-react'
+import { captureAttribution, submitLead, type Attribution } from '@/lib/leads'
+import { SITE_CONFIG } from '@/lib/constants'
 
 interface FormData {
   name: string
@@ -27,6 +29,11 @@ export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>(initialFormData)
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errors, setErrors] = useState<Partial<FormData>>({})
+  const [attribution, setAttribution] = useState<Attribution>({})
+
+  useEffect(() => {
+    setAttribution(captureAttribution())
+  }, [])
 
   const validateForm = (): boolean => {
     const newErrors: Partial<FormData> = {}
@@ -53,26 +60,11 @@ export default function ContactForm() {
     setStatus('submitting')
 
     try {
-      // TODO: Replace with actual GoHighLevel webhook URL
-      // const response = await fetch('GHL_WEBHOOK_URL_HERE', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({
-      //     ...formData,
-      //     source: 'website',
-      //     page: window.location.pathname,
-      //   }),
-      // })
-
-      // Simulate submission for now
-      console.log('Form submission:', {
+      await submitLead({
         ...formData,
-        source: 'website',
-        page: typeof window !== 'undefined' ? window.location.pathname : '',
+        source: 'website_contact',
+        ...attribution,
       })
-
-      // Simulate network delay
-      await new Promise((resolve) => setTimeout(resolve, 1000))
 
       setStatus('success')
       setFormData(initialFormData)
@@ -249,7 +241,15 @@ export default function ContactForm() {
       {/* Error message */}
       {status === 'error' && (
         <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700">
-          Something went wrong. Please try again or call us directly at (504) 957-1104.
+          We couldn&apos;t send your inquiry. Please call or text us at{' '}
+          <a href={SITE_CONFIG.phoneLink} className="font-semibold underline">
+            {SITE_CONFIG.phone}
+          </a>{' '}
+          or email{' '}
+          <a href={`mailto:${SITE_CONFIG.email}`} className="font-semibold underline">
+            {SITE_CONFIG.email}
+          </a>
+          .
         </div>
       )}
 

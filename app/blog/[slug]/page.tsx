@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { PlaceholderImage, ArticleSchema } from '@/components'
 import { getPostBySlug, getAllPostSlugs } from '@/lib/mdx'
 import { SITE_CONFIG } from '@/lib/constants'
+import { blogImageFor } from '@/lib/blog-images'
 import { Calendar, User, ArrowLeft, Phone } from 'lucide-react'
 
 interface BlogPostPageProps {
@@ -62,6 +63,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           category="gallery"
           label={post.title}
           aspectRatio="21:9"
+          src={blogImageFor(post.slug, post.featuredImage)}
+          sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-black/50" />
       </section>

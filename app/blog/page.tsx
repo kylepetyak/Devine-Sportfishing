@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PlaceholderImage } from '@/components'
+import { blogImageFor } from '@/lib/blog-images'
 import { getAllPosts, getCategories } from '@/lib/mdx'
 import { Calendar, User, ArrowRight } from 'lucide-react'
 
@@ -57,6 +58,8 @@ export default function BlogPage() {
                     category="gallery"
                     label={post.title}
                     aspectRatio="16:9"
+                    src={blogImageFor(post.slug, post.featuredImage)}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div className="p-6">
                     <span className="text-xs font-semibold text-accent uppercase tracking-wider">

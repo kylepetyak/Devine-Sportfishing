@@ -39,8 +39,11 @@ export default function AboutPage() {
       <section className="relative">
         <PlaceholderImage
           category="captain"
-          label="Captain Blake & Captain Lakelynn"
+          label="Captain Blake & Captain Lakelynn Devine with a big yellowfin tuna"
           aspectRatio="21:9"
+          src="/images/captains/blake-and-lakelynn.jpg"
+          sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <div className="text-center text-white px-4">
@@ -91,6 +94,8 @@ export default function AboutPage() {
                 label="Captain Blake Devine"
                 aspectRatio="3:4"
                 className="rounded-xl shadow-lg"
+                src="/images/captains/blake-devine.jpg"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -107,6 +112,8 @@ export default function AboutPage() {
                 label="Captain Lakelynn Devine"
                 aspectRatio="3:4"
                 className="rounded-xl shadow-lg"
+                src="/images/captains/lakelynn-devine.jpg"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             <div className="order-1 lg:order-2">
@@ -183,6 +190,8 @@ export default function AboutPage() {
                 category="boat"
                 label="38' Custom Catamaran"
                 aspectRatio="16:9"
+                src="/images/gallery/extra/group-swordfish-boat.jpg"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="p-6">
                 <div className="flex items-center mb-4">
@@ -225,6 +234,8 @@ export default function AboutPage() {
                 category="boat"
                 label="22' Catamaran"
                 aspectRatio="16:9"
+                src="/images/trips/inshore-fishing.jpg"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="p-6">
                 <div className="flex items-center mb-4">

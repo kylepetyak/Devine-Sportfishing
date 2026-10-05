@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PlaceholderImage, TouristTripSchema } from '@/components'
-import { TRIPS, SITE_CONFIG } from '@/lib/constants'
+import { TRIPS, SITE_CONFIG, TRIP_IMAGES } from '@/lib/constants'
 import { Clock, Users, Ship, Check, Phone, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -27,6 +27,9 @@ export default function OffshoreTripPage() {
           category="trip"
           label="Offshore Fishing Action"
           aspectRatio="21:9"
+          src={TRIP_IMAGES.offshore.hero}
+          sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <div className="text-center text-white px-4">
@@ -109,12 +112,12 @@ export default function OffshoreTripPage() {
                   Offshore Gallery
                 </h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  <PlaceholderImage category="fish" label="Yellowfin Tuna" aspectRatio="4:3" className="rounded-lg" />
-                  <PlaceholderImage category="trip" label="Offshore Action" aspectRatio="4:3" className="rounded-lg" />
-                  <PlaceholderImage category="fish" label="Blue Marlin" aspectRatio="4:3" className="rounded-lg" />
-                  <PlaceholderImage category="boat" label="38' Catamaran" aspectRatio="4:3" className="rounded-lg" />
-                  <PlaceholderImage category="fish" label="Wahoo" aspectRatio="4:3" className="rounded-lg" />
-                  <PlaceholderImage category="trip" label="Happy Anglers" aspectRatio="4:3" className="rounded-lg" />
+                  <PlaceholderImage category="fish" label="Customer with a big yellowfin tuna" aspectRatio="4:3" className="rounded-lg" src="/images/gallery/extra/customer-big-yellow-01.jpg" sizes="(max-width: 768px) 50vw, 25vw" />
+                  <PlaceholderImage category="trip" label="Fighting a tuna offshore" aspectRatio="4:3" className="rounded-lg" src="/images/gallery/extra/courtney-fighting-tuna.jpg" sizes="(max-width: 768px) 50vw, 25vw" />
+                  <PlaceholderImage category="fish" label="Blue marlin tagged and released" aspectRatio="4:3" className="rounded-lg" src="/images/gallery/catch-06.jpg" sizes="(max-width: 768px) 50vw, 25vw" />
+                  <PlaceholderImage category="boat" label="Swordfish on the 38' catamaran" aspectRatio="4:3" className="rounded-lg" src="/images/gallery/extra/group-swordfish-boat.jpg" sizes="(max-width: 768px) 50vw, 25vw" />
+                  <PlaceholderImage category="fish" label="Customers with a wahoo" aspectRatio="4:3" className="rounded-lg" src="/images/gallery/extra/customers-wahoo.jpg" sizes="(max-width: 768px) 50vw, 25vw" />
+                  <PlaceholderImage category="trip" label="Ladies with a big yellowfin" aspectRatio="4:3" className="rounded-lg" src="/images/gallery/extra/ladies-big-yellowfin-01.jpg" sizes="(max-width: 768px) 50vw, 25vw" />
                 </div>
               </div>
             </div>

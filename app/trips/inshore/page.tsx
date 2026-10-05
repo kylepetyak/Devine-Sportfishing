@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PlaceholderImage, TouristTripSchema } from '@/components'
-import { TRIPS, SITE_CONFIG } from '@/lib/constants'
+import { TRIPS, SITE_CONFIG, TRIP_IMAGES } from '@/lib/constants'
 import { Clock, Users, Ship, Check, Phone, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -27,6 +27,9 @@ export default function InshoreTripPage() {
           category="trip"
           label="Inshore Fishing"
           aspectRatio="21:9"
+          src={TRIP_IMAGES.inshore.hero}
+          sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <div className="text-center text-white px-4">
@@ -109,12 +112,12 @@ export default function InshoreTripPage() {
                   Inshore Gallery
                 </h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  <PlaceholderImage category="fish" label="Bull Redfish" aspectRatio="4:3" className="rounded-lg" />
-                  <PlaceholderImage category="trip" label="Marsh Fishing" aspectRatio="4:3" className="rounded-lg" />
-                  <PlaceholderImage category="fish" label="Speckled Trout" aspectRatio="4:3" className="rounded-lg" />
-                  <PlaceholderImage category="boat" label="22' Catamaran" aspectRatio="4:3" className="rounded-lg" />
-                  <PlaceholderImage category="fish" label="Flounder" aspectRatio="4:3" className="rounded-lg" />
-                  <PlaceholderImage category="trip" label="Family Trip" aspectRatio="4:3" className="rounded-lg" />
+                  <PlaceholderImage category="fish" label="Father and daughter with a redfish" aspectRatio="4:3" className="rounded-lg" src="/images/species/inshore-species.jpg" sizes="(max-width: 768px) 50vw, 25vw" />
+                  <PlaceholderImage category="trip" label="Inshore redfish on the bay boat" aspectRatio="4:3" className="rounded-lg" src="/images/trips/inshore-fishing.jpg" sizes="(max-width: 768px) 50vw, 25vw" />
+                  <PlaceholderImage category="trip" label="Checking behind a shrimp boat" aspectRatio="4:3" className="rounded-lg" src="/images/gallery/sunset-boat.jpg" sizes="(max-width: 768px) 50vw, 25vw" />
+                  <PlaceholderImage category="trip" label="Captain Blake throwing the cast net" aspectRatio="4:3" className="rounded-lg" src="/images/gallery/extra/blake-cast-net.jpg" sizes="(max-width: 768px) 50vw, 25vw" />
+                  <PlaceholderImage category="trip" label="First mate Minnow" aspectRatio="4:3" className="rounded-lg" src="/images/gallery/extra/minnow-devine.jpg" sizes="(max-width: 768px) 50vw, 25vw" />
+                  <PlaceholderImage category="trip" label="Father and daughter trip at the marina" aspectRatio="4:3" className="rounded-lg" src="/images/trips/custom-trip.jpg" sizes="(max-width: 768px) 50vw, 25vw" />
                 </div>
               </div>
             </div>

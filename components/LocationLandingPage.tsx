@@ -125,9 +125,11 @@ export default function LocationLandingPage({
             <div>
               <PlaceholderImage
                 category="trip"
-                label={isTunaPage ? 'Trophy Yellowfin Tuna' : 'Venice Louisiana Fishing'}
+                label={isTunaPage ? 'Trophy yellowfin tuna with Devine Sportfishing' : 'Fishing out of Venice, Louisiana'}
                 aspectRatio="4:3"
                 className="rounded-xl shadow-lg"
+                src={isTunaPage ? '/images/gallery/catch-01.jpg' : '/images/gallery/hero-bg.jpg'}
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
