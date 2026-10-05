@@ -3,11 +3,11 @@
 # Lines starting with # are ignored. Edit the destination column to re-map a photo, then re-run scripts/import-drive-images.sh
 #
 # --- Hero (homepage video fallback + landing page hero background) ---
-1Jbv-LSLSDZ6xWXt-rEfKQ1gyajLuhgpY	hero/hero-fallback.jpg	Customers w/ tuna on bow
-15x6Jwx6wrATHK0PjuVOnXSZ1mPTYTRLG	gallery/hero-bg.jpg	Dock shot- 2 big yellows
+1Jbv-LSLSDZ6xWXt-rEfKQ1gyajLuhgpY	gallery/extra/customers-tuna-on-bow.jpg	Customers w/ tuna on bow
+15x6Jwx6wrATHK0PjuVOnXSZ1mPTYTRLG	gallery/extra/dock-two-big-yellows.jpg	Dock shot- 2 big yellows
 #
 # --- Captains ---
-1lS-mdFXxnSeiLBM_okiKjHlFy4SAYjCD	captains/blake-devine.jpg	Blake fighting tuna
+1lS-mdFXxnSeiLBM_okiKjHlFy4SAYjCD	gallery/extra/blake-fighting-tuna.jpg	Blake fighting tuna
 1b0-EcN4IxSsZwXBFQAyLlCLMqWL3-Bbi	captains/lakelynn-devine.jpg	Lake w/ wahoo
 1QyOLh6TEF37d6vRSLvUA91KowGyiKCfX	captains/blake-and-lakelynn.jpg	Lake & Blake w/ big yellowfin
 #
@@ -45,8 +45,8 @@
 1MtvCV0Wqlqa28s1dMpbig7kzRkY0ssvy	testimonials/sarah-m.jpg	Girl w/ Tuna
 1WWsbJ0re_pygJepjDYIRyE909fcT93w1	testimonials/james-t.jpg	Customer w/ Amberjack
 #
-# --- Logos ---
-1LNPbeq5BoSi5SJHBUi5vwi9d81CJIY55	logo.png	Color logo
+# --- Logos (logo.png itself is the transparent file carried over from the old Webflow site) ---
+1LNPbeq5BoSi5SJHBUi5vwi9d81CJIY55	logo-color-card.png	Color logo
 1mSPxw4FNWH2WeGXREjg-cDCaNhy5RSML	logo-on-black.png	Color logo w/ black background
 1use8ZOsMkA9V2jOZnbDIEqZ7BfWStEOw	logo-bw.jpg	Black & white logo
 #
@@ -67,7 +67,7 @@
 1OkCL_vQhMgjEgzQWTiB98sb8Q2T7qUfW	gallery/extra/lake-blake-yellowfin-02.jpg	Lake & Blake w/ big yellowfin
 1iW4U1gx-VgzV4r-RF8fVdF1_QZszGVVV	gallery/extra/lake-tuna-tail.jpg	Lake tuna tail
 1-7aUFuGVCBakQsrgS1SuR19f-3rcA4cf	gallery/extra/tagging-big-yellowfin.jpg	Tagging a big yellowfin
-1jK6luQQM5acCUJPCmMGx7AV0ou7taQSb	gallery/extra/blake-tuna-loin.jpg	Blake w/ big tuna loin
+1jK6luQQM5acCUJPCmMGx7AV0ou7taQSb	captains/blake-devine.jpg	Blake w/ big tuna loin
 1H7g7AFlUu2BiLRwOk3kakIV-SZm2d5eM	gallery/extra/blake-cast-net.jpg	Blake throwing cast net
 12cv9gSo45Vqne_rZGeQyMgGQ5wOJJQWm	gallery/extra/lake-and-mom-wahoo.jpg	Lake & her mom w/ wahoo
 1m7hZjUEcU-ha3fAizL90uTIJLHkQNGqN	gallery/extra/customer-wahoo.jpg	Customer w/ wahoo
@@ -79,7 +79,7 @@
 1VinUdk7t2xp_c8JUqcXPpJvxkWBza1M0	gallery/extra/group-big-yellowfin.jpg	Group with big yellowfin
 1wGMn0N8JWq7LPaDl-aNdbQW1ymyI0k7s	gallery/extra/group-yellowfin.jpg	Group w/ yellowfin
 1r1E5sXvfB7SSnJQAhOYQBs3RjL_lD7eX	gallery/extra/group-three-yellows.jpg	Group w/ 3 big yellows
-1KQBU4b408Mm5_XFtN9_jNgKo33FqqSYJ	gallery/extra/group-tuna.jpg	Group w/ tuna
+1KQBU4b408Mm5_XFtN9_jNgKo33FqqSYJ	gallery/hero-bg.jpg	Group w/ tuna
 1Z1fFxtSxzZ41hiYPbLxddZreiKbtB8fr	gallery/extra/daniel-crew-yellowfin.jpg	Mr. Daniel & crew holding big yellowfin
 1nZdayck9Vu0Cw3C80OvAdSANxNgsv4HQ	gallery/extra/daniel-crew.jpg	Mr. Daniel & crew
 1yF9ctnobhm20SR5bu0VxUp1pW7OEGx0F	gallery/extra/hayes-family-bow-tunas.jpg	Hayes family- bow picture of tunas
@@ -93,7 +93,7 @@
 1KI4E-jQF-mk7bAjiwclGZWur-T6gVwnC	gallery/extra/father-two-sons-big-tuna.jpg	Father & 2 sons w/ big tuna
 1tc_JpDWlHUbrecJF7gAD0n6SYAZiHlMS	gallery/extra/father-two-sons-tuna-01.jpg	Father & 2 sons w/ tuna
 1CWYM2oh6nhOyM6uiG9VIC7kq6cA5e9Lm	gallery/extra/father-two-sons-tuna-02.jpg	Father & 2 sons w/ tuna
-1Oe5GfJZixw5bYD08D9x3VPIq_J0_7VQZ	gallery/extra/father-daughter-fighting-tuna.jpg	Father & daughter - fighting tuna
+1Oe5GfJZixw5bYD08D9x3VPIq_J0_7VQZ	hero/hero-fallback.jpg	Father & daughter - fighting tuna
 1V-tyK8E6R1dW5autYWS0MqgbzC7FlWJh	gallery/extra/girl-fighting-tuna.jpg	Girl fighting a tuna
 1kFVXAxoBDIIGO7aSKC8VtqDa9d37Rrre	gallery/extra/girl-tuna-02.jpg	Girl w/ tuna
 1P6A_HwS09dy-ylIVsLTrDmUhQrn6Ncdq	gallery/extra/courtney-fighting-tuna.jpg	Courtney fighting tuna

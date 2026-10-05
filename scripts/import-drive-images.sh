@@ -7,7 +7,8 @@
 #   scripts/import-drive-images.sh            # download + convert anything missing
 #   scripts/import-drive-images.sh --force    # re-download and re-convert everything
 #
-# Requirements: curl, ImageMagick `convert` with HEIC support (libheif).
+# Requirements: curl, python3 with `pip install pillow pillow-heif`
+# (pillow-heif bundles the HEVC decoder that iPhone HEIC files need).
 # Edit scripts/drive-images.manifest.tsv to change which photo goes where.
 
 set -euo pipefail
@@ -20,11 +21,9 @@ FORCE="${1:-}"
 
 mkdir -p "$OUT_DIR" "$CACHE_DIR"
 
-if ! command -v convert >/dev/null; then
-  echo "ImageMagick 'convert' not found" >&2; exit 1
-fi
-if ! convert -list format | grep -q "HEIC"; then
-  echo "ImageMagick is missing HEIC support (libheif)" >&2; exit 1
+CONVERT="$ROOT/scripts/convert-image.py"
+if ! python3 -c "import PIL, pillow_heif" 2>/dev/null; then
+  echo "Missing Python deps. Run: pip install pillow pillow-heif" >&2; exit 1
 fi
 
 # Max long-edge size by destination. Large backgrounds get more pixels.
@@ -75,16 +74,12 @@ while IFS=$'\t' read -r id dest title; do
   fi
 
   size="$(max_size_for "$dest")"
-  ext="${out##*.}"
-  case "$ext" in
-    png)
-      convert "$raw" -auto-orient -strip -resize "${size}x${size}>" "$out" ;;
-    *)
-      convert "$raw" -auto-orient -strip -resize "${size}x${size}>" \
-        -sampling-factor 4:2:0 -quality 82 -interlace JPEG -colorspace sRGB "$out" ;;
-  esac
-  echo "ok  $dest  <-  $title"
-  ok=$((ok+1))
+  if dims="$(python3 "$CONVERT" "$raw" "$out" "$size" 2>&1)"; then
+    echo "ok  $dest ($dims)  <-  $title"
+    ok=$((ok+1))
+  else
+    echo "FAIL convert: $title ($id): $dims" >&2; rm -f "$out"; failed=$((failed+1))
+  fi
 done < "$MANIFEST"
 
 echo

@@ -16,7 +16,7 @@ export const SITE_CONFIG = {
     instagram: 'https://www.instagram.com/devinesportfishing/',
     facebook: 'https://www.facebook.com/profile.php?id=61572185021191',
   },
-  logo: 'https://cdn.prod.website-files.com/67891defbbf61e4b03972c08/67892008b58ff05dfc7d92e9_Devine%20Sportfishing%20logo-lg-trans.png',
+  logo: '/images/logo.png',
 }
 
 export const TRIPS = {
