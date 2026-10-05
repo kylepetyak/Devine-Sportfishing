@@ -1,6 +1,7 @@
 'use client'
 
-import { Fish, Ship, Camera, User, Image as ImageIcon, Waves } from 'lucide-react'
+import Image from 'next/image'
+import { Fish, Ship, Camera, User, Waves } from 'lucide-react'
 import { clsx } from 'clsx'
 
 interface PlaceholderImageProps {
@@ -8,6 +9,12 @@ interface PlaceholderImageProps {
   label: string
   aspectRatio?: '16:9' | '4:3' | '1:1' | '3:4' | '21:9'
   className?: string
+  /** Real photo to render. When set, the gradient placeholder is not shown. */
+  src?: string
+  /** Responsive sizes hint for the real photo. Defaults to full width. */
+  sizes?: string
+  /** Preload the photo (use for above-the-fold heroes only). */
+  priority?: boolean
 }
 
 const categoryConfig = {
@@ -56,7 +63,25 @@ export default function PlaceholderImage({
   label,
   aspectRatio = '16:9',
   className,
+  src,
+  sizes = '100vw',
+  priority = false,
 }: PlaceholderImageProps) {
+  if (src) {
+    return (
+      <div className={clsx('relative overflow-hidden', aspectRatioClasses[aspectRatio], className)}>
+        <Image
+          src={src}
+          alt={label}
+          fill
+          sizes={sizes}
+          priority={priority}
+          className="object-cover"
+        />
+      </div>
+    )
+  }
+
   const config = categoryConfig[category]
   const Icon = config.icon
 

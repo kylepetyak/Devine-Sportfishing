@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Users, Clock, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import PlaceholderImage from './PlaceholderImage'
+import { TRIP_IMAGES } from '@/lib/constants'
 
 interface TripCardProps {
   name: string
@@ -62,7 +63,14 @@ export default function TripCard({
       {/* Image */}
       <div className="relative h-56 overflow-hidden">
         <div className="w-full h-full transition-transform duration-500 group-hover:scale-110">
-          <PlaceholderImage category="trip" label={name} aspectRatio="16:9" />
+          <PlaceholderImage
+            category="trip"
+            label={name}
+            aspectRatio="16:9"
+            src={TRIP_IMAGES[slug]?.card}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="h-full"
+          />
         </div>
 
         {/* Gradient Overlay */}

@@ -73,8 +73,8 @@ const config: Config = {
         light: '#f8f9fa',
       },
       fontFamily: {
-        heading: ['Montserrat', 'sans-serif'],
-        body: ['Open Sans', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-heading)', 'Montserrat', 'sans-serif'],
+        body: ['var(--font-body)', 'Open Sans', 'system-ui', 'sans-serif'],
       },
       animation: {
         wave: 'wave 20s linear infinite',

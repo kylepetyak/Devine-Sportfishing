@@ -17,14 +17,11 @@ export function CaptainsBrief() {
             {/* Photo */}
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/captains.jpg"
-                alt="Captain Blake and Captain Lakelynn Devine"
+                src="/images/captains/blake-and-lakelynn.jpg"
+                alt="Captain Blake and Captain Lakelynn Devine with a big yellowfin tuna"
                 fill
+                sizes="(max-width: 768px) 100vw, 448px"
                 className="object-cover"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement
-                  target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80'
-                }}
               />
               {/* Overlay badge */}
               <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-sm rounded-lg p-3">

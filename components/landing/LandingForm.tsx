@@ -2,16 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-
-interface UTMData {
-  utm_source: string | null
-  utm_medium: string | null
-  utm_campaign: string | null
-  utm_content: string | null
-  utm_term: string | null
-  gclid: string | null
-  fbclid: string | null
-}
+import { captureAttribution, submitLead, type Attribution } from '@/lib/leads'
 
 interface FormData {
   name: string
@@ -33,24 +24,13 @@ export function LandingForm() {
     guests: '',
     message: '',
   })
-  const [utmData, setUtmData] = useState<UTMData | null>(null)
+  const [attribution, setAttribution] = useState<Attribution>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showMessage, setShowMessage] = useState(false)
 
-  // Capture UTM parameters on mount
+  // Capture UTM / click-id attribution on mount
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search)
-    const utm: UTMData = {
-      utm_source: params.get('utm_source'),
-      utm_medium: params.get('utm_medium'),
-      utm_campaign: params.get('utm_campaign'),
-      utm_content: params.get('utm_content'),
-      utm_term: params.get('utm_term'),
-      gclid: params.get('gclid'),
-      fbclid: params.get('fbclid'),
-    }
-    setUtmData(utm)
-    sessionStorage.setItem('utm_data', JSON.stringify(utm))
+    setAttribution(captureAttribution())
   }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -63,18 +43,10 @@ export function LandingForm() {
     setIsSubmitting(true)
 
     try {
-      // POST to GHL webhook (placeholder URL - Kyle will replace)
-      const webhookUrl = process.env.NEXT_PUBLIC_GHL_WEBHOOK_URL || 'GHL_WEBHOOK_URL_HERE'
-
-      await fetch(webhookUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...formData,
-          source: 'landing_page',
-          page_url: window.location.href,
-          ...utmData,
-        }),
+      await submitLead({
+        ...formData,
+        source: 'landing_page',
+        ...attribution,
       })
 
       // Fire Meta Pixel Lead event if available
@@ -256,17 +228,6 @@ export function LandingForm() {
           We respect your privacy. No spam, ever.
         </p>
       </form>
-
-      {/* Hidden UTM fields for tracking */}
-      {utmData && (
-        <div className="hidden">
-          <input type="hidden" name="utm_source" value={utmData.utm_source || ''} />
-          <input type="hidden" name="utm_medium" value={utmData.utm_medium || ''} />
-          <input type="hidden" name="utm_campaign" value={utmData.utm_campaign || ''} />
-          <input type="hidden" name="gclid" value={utmData.gclid || ''} />
-          <input type="hidden" name="fbclid" value={utmData.fbclid || ''} />
-        </div>
-      )}
     </motion.div>
   )
 }

@@ -4,36 +4,12 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 const photos = [
-  {
-    src: '/images/gallery/tuna-catch.jpg',
-    alt: 'Trophy yellowfin tuna catch',
-    fallback: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80',
-  },
-  {
-    src: '/images/gallery/happy-customers.jpg',
-    alt: 'Happy customers on the boat',
-    fallback: 'https://images.unsplash.com/photo-1516942738870-4d0b0e7f0be4?w=400&q=80',
-  },
-  {
-    src: '/images/gallery/boat.jpg',
-    alt: 'The 38-foot catamaran',
-    fallback: 'https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=400&q=80',
-  },
-  {
-    src: '/images/gallery/sunset.jpg',
-    alt: 'Sunset over Venice Louisiana',
-    fallback: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
-  },
-  {
-    src: '/images/gallery/fish-cooler.jpg',
-    alt: 'Cooler full of fish',
-    fallback: 'https://images.unsplash.com/photo-1498654200943-1088dd4438ae?w=400&q=80',
-  },
-  {
-    src: '/images/gallery/captains-customers.jpg',
-    alt: 'Captains with happy customers',
-    fallback: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=400&q=80',
-  },
+  { src: '/images/gallery/tuna-catch.jpg', alt: 'Group with a big yellowfin tuna' },
+  { src: '/images/gallery/happy-customers.jpg', alt: 'Ladies having fun on the boat' },
+  { src: '/images/gallery/boat.jpg', alt: 'Customers with their catch on the bow' },
+  { src: '/images/gallery/sunset.jpg', alt: 'Big swordfish and crew at the dock' },
+  { src: '/images/gallery/fish-cooler.jpg', alt: 'Red snapper and scamp grouper' },
+  { src: '/images/gallery/captains-customers.jpg', alt: 'Captains Lakelynn and Blake with a big swordfish at the marina' },
 ]
 
 export function PhotoStrip() {
@@ -72,11 +48,8 @@ export function PhotoStrip() {
                 src={photo.src}
                 alt={photo.alt}
                 fill
+                sizes="(max-width: 768px) 256px, 320px"
                 className="object-cover"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement
-                  target.src = photo.fallback
-                }}
               />
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />

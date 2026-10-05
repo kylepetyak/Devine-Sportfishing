@@ -30,10 +30,9 @@ export default function GalleryPage() {
         <div className="container-custom">
           <Gallery />
 
-          {/* Note about placeholder */}
           <div className="mt-12 text-center">
             <p className="text-gray-500 text-sm mb-4">
-              Real photos coming soon! Follow us on Instagram for the latest catches.
+              Follow us on Instagram for the latest catches.
             </p>
             <a
               href={SITE_CONFIG.social.instagram}

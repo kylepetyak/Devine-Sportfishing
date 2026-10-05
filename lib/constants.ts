@@ -106,14 +106,23 @@ export const SPECIES = {
   ],
 }
 
-export const SPONSORS = [
-  { name: 'AFTCO', logo: '/images/sponsors/aftco.png' },
-  { name: 'Shimano', logo: '/images/sponsors/shimano.png' },
-  { name: 'Yamaha', logo: '/images/sponsors/yamaha.png' },
-  { name: 'Costa Del Mar', logo: '/images/sponsors/costa.png' },
-  { name: 'Owner Hooks', logo: '/images/sponsors/owner.png' },
-  { name: 'Cortland Line', logo: '/images/sponsors/cortland.png' },
+// Sponsor logos are rendered as text until the brands supply logo files.
+// To show a logo, drop a PNG/SVG in public/images/sponsors/ and set `logo`.
+export const SPONSORS: { name: string; logo?: string }[] = [
+  { name: 'AFTCO' },
+  { name: 'Shimano' },
+  { name: 'Yamaha' },
+  { name: 'Costa Del Mar' },
+  { name: 'Owner Hooks' },
+  { name: 'Cortland Line' },
 ]
+
+// Photos used for trip cards and trip page heroes, keyed by trip slug
+export const TRIP_IMAGES: Record<string, { card: string; hero: string }> = {
+  offshore: { card: '/images/trips/offshore-fishing.jpg', hero: '/images/gallery/boat-action.jpg' },
+  inshore: { card: '/images/trips/inshore-fishing.jpg', hero: '/images/species/inshore-species.jpg' },
+  custom: { card: '/images/trips/custom-trip.jpg', hero: '/images/gallery/extra/family-holding-tuna.jpg' },
+}
 
 export const WHY_CHOOSE_US = [
   {

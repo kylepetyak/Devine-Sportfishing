@@ -36,11 +36,8 @@ export function LandingHeader() {
                 src="/images/logo.png"
                 alt="Devine Sportfishing"
                 fill
+                sizes="48px"
                 className="object-contain"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement
-                  target.style.display = 'none'
-                }}
               />
             </div>
             <span className={`text-xl font-bold transition-colors ${
