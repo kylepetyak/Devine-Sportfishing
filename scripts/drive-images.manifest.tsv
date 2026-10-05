@@ -1,0 +1,140 @@
+# Google Drive -> site image mapping
+# Columns: drive_file_id <TAB> destination (relative to public/images) <TAB> original Drive title
+# Lines starting with # are ignored. Edit the destination column to re-map a photo, then re-run scripts/import-drive-images.sh
+#
+# --- Hero (homepage video fallback + landing page hero background) ---
+1Jbv-LSLSDZ6xWXt-rEfKQ1gyajLuhgpY	hero/hero-fallback.jpg	Customers w/ tuna on bow
+15x6Jwx6wrATHK0PjuVOnXSZ1mPTYTRLG	gallery/hero-bg.jpg	Dock shot- 2 big yellows
+#
+# --- Captains ---
+1lS-mdFXxnSeiLBM_okiKjHlFy4SAYjCD	captains/blake-devine.jpg	Blake fighting tuna
+1b0-EcN4IxSsZwXBFQAyLlCLMqWL3-Bbi	captains/lakelynn-devine.jpg	Lake w/ wahoo
+1QyOLh6TEF37d6vRSLvUA91KowGyiKCfX	captains/blake-and-lakelynn.jpg	Lake & Blake w/ big yellowfin
+#
+# --- Trip cards ---
+185S1lzkvKeJ0eM0uUhL9I9mwCYlQJuRJ	trips/offshore-fishing.jpg	Offshore Fishing Picture
+18jNjn4P9Dp_PYhST7WuPiSY0NMPOGqeh	trips/inshore-fishing.jpg	Inshore Picture
+1Qmzsm46YJza6ydBB6h1op6AYeDj5byJM	trips/custom-trip.jpg	Father & daughter trip
+#
+# --- Species cards ---
+1bFGr6reENZVOUBe5PTKuLOx8pbvFk7yK	species/offshore-species.jpg	Marina pic- big tuna, wahoo, & blackfins
+1mCMBj094dmXyOkVzq1jRYAJdKATlkzZ5	species/inshore-species.jpg	Father & daughter w/ redfish
+#
+# --- Homepage gallery strip (6 tiles) ---
+1oeBBKCN-ojo9TCQusuOq_m3VcXrmG3sJ	gallery/catch-01.jpg	Lake & Blake w/ big yellowfin
+19uzvO5UT_2102Eg2n35Mq7ItwbFWfGhh	gallery/catch-02.jpg	Mrs. Jennifer w/ big sword
+1FKynB7-Wi_w2QBIsRoE1Nq3-W2nDxktO	gallery/catch-03.jpg	Mahi mahi- nice pic w/ colors
+1m0jvhX5r8j5BlYZf4ZVBHWtXznEmvo52	gallery/catch-04.jpg	Customer holding huge red snapper
+1hSoVfCSOyw0ulvQNV1l-Lb8wCEZ5BjlQ	gallery/catch-05.jpg	Group holding a big wahoo
+1s3mt8fCVQ6cx7ARY4Dy_jXLFfUD4Xs-g	gallery/catch-06.jpg	Lake w/ tagged & release blue marlin
+#
+# --- Homepage full-width image break + CTA background ---
+1S0a2fvrbfVz-Ll1DRy44A5bAjIKV0tSF	gallery/boat-action.jpg	Customers fighting fish
+124HfgOL80E5Nh9XgsepK9PCVo8gOLLwF	gallery/sunset-boat.jpg	Checking behind a shrimp boat
+#
+# --- Landing page photo strip (/book) ---
+1MM_imcW74GKqZG9m7pmpJshgVKgsjOkv	gallery/tuna-catch.jpg	Group w/ big tuna
+1LCPr2qOGjHKEmm9SpiBUyz8VG7KP3kiC	gallery/happy-customers.jpg	Ladies having fun
+1XBZyr_CSlfg7ubJSB3TOP5hm1Cu-yBvQ	gallery/boat.jpg	Customers w/ fish on the bow
+1Dxj-bYso1OyFGtGk-pZSFPU6EOLcQhrq	gallery/sunset.jpg	Big sword & crew at dock
+16jzA0Zv-B9sd8SP93PaNi5cot68-3S09	gallery/fish-cooler.jpg	Red snapper & scamp grouper
+1WdMAUE6HbAmpkcw6qVRDRZSwyQw7KLgC	gallery/captains-customers.jpg	Lake & Blake w/ big sword @ marina
+#
+# --- Testimonial photos (illustrative catch shots, not the named reviewers) ---
+1DWbdTl2aPw9dH8p8k_6Y5LrTLfr3XDgz	testimonials/mike-r.jpg	Two guys w/ tuna
+1MtvCV0Wqlqa28s1dMpbig7kzRkY0ssvy	testimonials/sarah-m.jpg	Girl w/ Tuna
+1WWsbJ0re_pygJepjDYIRyE909fcT93w1	testimonials/james-t.jpg	Customer w/ Amberjack
+#
+# --- Logos ---
+1LNPbeq5BoSi5SJHBUi5vwi9d81CJIY55	logo.png	Color logo
+1mSPxw4FNWH2WeGXREjg-cDCaNhy5RSML	logo-on-black.png	Color logo w/ black background
+1use8ZOsMkA9V2jOZnbDIEqZ7BfWStEOw	logo-bw.jpg	Black & white logo
+#
+# --- Press / magazine mentions (not wired into a page yet) ---
+1PhnAeswtY5qx7qFK0Di81NQ6pQtXS-KW	press/magazine-01.png	Magazine mention
+1IMlUiONubWiVpIJvj8JwPmihFHsXiwzy	press/magazine-02.png	Magazine mention
+1TZ27IgDs4mL-OsnFme_QKMIhfAbcT01o	press/magazine-03.png	Magazine mention
+#
+# --- Extended gallery (for /gallery page and future use) ---
+1-PpBNt273bBRCiPsE2PXl62q8fo7JkGE	gallery/extra/big-swordfish-back-deck.jpg	Big swordfish on the back deck
+1_CQx87OAyS0QVb0a2zdtU-la3gZOevRr	gallery/extra/lake-blake-swordfish-back-deck.jpg	Lake & Blake w/ big swordfish on back deck
+1CnexW6ZczEuVd2EP3qw4zqwxkZxuZP9M	gallery/extra/customers-swordfish-marina.jpg	Customers w/ big swordfish @ the marina
+1_6NocBsA_aMi_TCkj1wRjtlf7OLVYb6A	gallery/extra/group-swordfish-boat.jpg	Group pic on boat w/ swordfish
+1zcaNHq5NlNzcQhGv_DvVV1wPcdYMhGl3	gallery/extra/group-nice-sword.jpg	Group w/ nice sword
+1aVi9TbIo9-9LaXX3FcM13Q7HkW0aE0JT	gallery/extra/group-sword.jpg	Group w/ sword
+1hAk36w0rj9Mh8BrjK0199ksBGD0jBb8j	gallery/extra/swordfish-tagged-released.jpg	Swordfish- tagged & released
+1CLftaoWHVcM7HI_5D2kTBRj_tpvmYkuR	gallery/extra/tag-release-small-sword.jpg	Tag & release a small sword
+1OkCL_vQhMgjEgzQWTiB98sb8Q2T7qUfW	gallery/extra/lake-blake-yellowfin-02.jpg	Lake & Blake w/ big yellowfin
+1iW4U1gx-VgzV4r-RF8fVdF1_QZszGVVV	gallery/extra/lake-tuna-tail.jpg	Lake tuna tail
+1-7aUFuGVCBakQsrgS1SuR19f-3rcA4cf	gallery/extra/tagging-big-yellowfin.jpg	Tagging a big yellowfin
+1jK6luQQM5acCUJPCmMGx7AV0ou7taQSb	gallery/extra/blake-tuna-loin.jpg	Blake w/ big tuna loin
+1H7g7AFlUu2BiLRwOk3kakIV-SZm2d5eM	gallery/extra/blake-cast-net.jpg	Blake throwing cast net
+12cv9gSo45Vqne_rZGeQyMgGQ5wOJJQWm	gallery/extra/lake-and-mom-wahoo.jpg	Lake & her mom w/ wahoo
+1m7hZjUEcU-ha3fAizL90uTIJLHkQNGqN	gallery/extra/customer-wahoo.jpg	Customer w/ wahoo
+1W2uPVmUknFJEFm4VhHw3yX_piujDG9qe	gallery/extra/customers-wahoo.jpg	Customers w/ wahoo
+1rYWa2Yx_jbWuwO8CUJkZHitsG--gqmDY	gallery/extra/ladies-big-yellowfin-01.jpg	Ladies w/ big yellowfin
+1Awpcuu1jXi_rxbHwcYwq_F_itt7I2eWf	gallery/extra/ladies-big-yellowfin-02.jpg	Ladies w/ big yellowfin
+14cRpFhLNNRIP3gVW0AomGEt-f0VRgKgW	gallery/extra/ladies-tuna-boatside.jpg	Group of ladies w/ big tuna on side the boat
+1NSyeP1aT01imb_RMWP3qr0MKZxrmumWo	gallery/extra/guys-big-yellowfin.jpg	Group of guys holding big yellowfin
+1VinUdk7t2xp_c8JUqcXPpJvxkWBza1M0	gallery/extra/group-big-yellowfin.jpg	Group with big yellowfin
+1wGMn0N8JWq7LPaDl-aNdbQW1ymyI0k7s	gallery/extra/group-yellowfin.jpg	Group w/ yellowfin
+1r1E5sXvfB7SSnJQAhOYQBs3RjL_lD7eX	gallery/extra/group-three-yellows.jpg	Group w/ 3 big yellows
+1KQBU4b408Mm5_XFtN9_jNgKo33FqqSYJ	gallery/extra/group-tuna.jpg	Group w/ tuna
+1Z1fFxtSxzZ41hiYPbLxddZreiKbtB8fr	gallery/extra/daniel-crew-yellowfin.jpg	Mr. Daniel & crew holding big yellowfin
+1nZdayck9Vu0Cw3C80OvAdSANxNgsv4HQ	gallery/extra/daniel-crew.jpg	Mr. Daniel & crew
+1yF9ctnobhm20SR5bu0VxUp1pW7OEGx0F	gallery/extra/hayes-family-bow-tunas.jpg	Hayes family- bow picture of tunas
+1mhPCL95GI8daog5roqaWCyZNaM51V3je	gallery/extra/hayes-family-yellowfin.jpg	Hayes family with yellowfin
+1tzVDwVAG3XJisfOuddFadoaBWB-z_M4K	gallery/extra/family-holding-tuna.jpg	Family holding tuna
+1og8I7BIkdcirIV7_isQ8WYNF4jE3P9e1	gallery/extra/family-yellowfin.jpg	Family w/ yellowfin
+1aJPkzgPlkk6jo5PYxUMnmcmLLwCftx_x	gallery/extra/family-tuna.jpg	Family w/ tuna
+1-bNuRZ5-161lWmsWPT2ascWWTfJjlIHt	gallery/extra/family-red-snapper.jpg	Family w/ red snapper
+16t8a9F0h3AYfMMIAJ9vbhcp2KL7OZpAq	gallery/extra/father-son-yellowfin.jpg	Father & son w/ yellowfin
+1t92iV-s0hoGw2CcfnXf-Pbp1tcKg7zPN	gallery/extra/father-son-tuna-oil-rig.jpg	Father & son w/ tuna by oil rig
+1KI4E-jQF-mk7bAjiwclGZWur-T6gVwnC	gallery/extra/father-two-sons-big-tuna.jpg	Father & 2 sons w/ big tuna
+1tc_JpDWlHUbrecJF7gAD0n6SYAZiHlMS	gallery/extra/father-two-sons-tuna-01.jpg	Father & 2 sons w/ tuna
+1CWYM2oh6nhOyM6uiG9VIC7kq6cA5e9Lm	gallery/extra/father-two-sons-tuna-02.jpg	Father & 2 sons w/ tuna
+1Oe5GfJZixw5bYD08D9x3VPIq_J0_7VQZ	gallery/extra/father-daughter-fighting-tuna.jpg	Father & daughter - fighting tuna
+1V-tyK8E6R1dW5autYWS0MqgbzC7FlWJh	gallery/extra/girl-fighting-tuna.jpg	Girl fighting a tuna
+1kFVXAxoBDIIGO7aSKC8VtqDa9d37Rrre	gallery/extra/girl-tuna-02.jpg	Girl w/ tuna
+1P6A_HwS09dy-ylIVsLTrDmUhQrn6Ncdq	gallery/extra/courtney-fighting-tuna.jpg	Courtney fighting tuna
+109P-BPusI6etCex4kI1KnDzQ9RYOv0xl	gallery/extra/courtney-tuna.jpg	Courtney w/ Tuna
+1K9Y75LZXKp8dNn19qRHUAIr6iWFhYHTw	gallery/extra/young-boy-tuna.jpg	Young boy w/ tuna
+18bISjiLR76wy5RFtwfBXV-ghGEI7YmdZ	gallery/extra/bryson-tuna.jpg	Bryson w/ tuna
+1YS0KNeAAZt1BGtgY2M9WzHdJWD_z1NT7	gallery/extra/bryson-big-yellowfin.jpg	Bryson w/ big yellowfin
+1PnmPK8gxMmd7wQ0vw_9DRm1IT7yRTAMS	gallery/extra/matt-first-tuna.jpg	1st tuna for Matt
+1n1idRtTZ7pvJdMMN14V1SblEXgsCv-Iw	gallery/extra/customer-tuna-01.jpg	Customer w/ tuna
+1nmToJ_FXlteH_gMBy6ByskO6c1mXFnbE	gallery/extra/customer-tuna-02.jpg	Customer w/ tuna
+15-fO724Hfo3SgTdck-rb9edLST3kHH6T	gallery/extra/customer-tuna-03.jpg	Customer w/ tuna
+19ypd7sH1rsDgIbjlTzEmuPcMDBOUodEG	gallery/extra/pair-of-big-tunas.jpg	Pair of big tunas
+1JV86hEtyaOs-KgZ3yIjpP8f6FFHWC3V4	gallery/extra/customers-yellowfin-01.jpg	Customers w/ yellowfin
+1oP4B3Vs_3zULuFKSJkkqzkLVqlSjjA6N	gallery/extra/customers-yellowfin-02.jpg	Customers with yellowfin
+1Z_pT1r16OI6H1zpIp-o85LHXAWuiA6gO	gallery/extra/customer-holding-yellowfin.jpg	Customer holding yellowfin
+1Xzzhs9sdRPrgF-j34BPq6W6fIX0NDLHp	gallery/extra/customer-big-yellow-01.jpg	Customer w/ big yellow
+1hKx1j8V3hJm2o3UE7GUaGynRzX_Y3i1T	gallery/extra/customer-big-yellow-02.jpg	Customer w/ big yellow
+1ka50JFfKiIWSRWmcFjnIYaJTKZKv9SJK	gallery/extra/big-yellow-customers.jpg	Big yellow & customers
+1ULZpyLI1FbOR7pr3eetX59Spcq21fHCv	gallery/extra/jennifer-yellowfin.jpg	Mrs. Jennifer w/ yellowfin
+1DxxR4E5JkvzxK47V5-APiARHzh86pSNN	gallery/extra/mahi.jpg	Mahi
+1D3kKkW7NwTfXBQunNjkf5RbzMBTqWfEq	gallery/extra/mahi-mahi.jpg	Mahi mahi
+1rcsVTdLrWbsT5q0b_1BtfjAuF0_bNR4N	gallery/extra/young-man-mahi.jpg	Young man w/ mahi mahi
+1MR_NagzAwlmGratRYla-r8L1UG-6yQ3W	gallery/extra/young-boys-mahi.jpg	Young boys w/ mahi
+1tbN2HePp6K10HxgfqtIcyZ2MubXXowgj	gallery/extra/big-american-red-snapper.jpg	Big American Red Snapper
+1hUUT3ej23af4D73Nn59eYyhcSSyfSMSB	gallery/extra/customer-huge-red-snapper-02.jpg	Customer holding huge red snapper
+1LGTYorl4bT5Pzs-9iP36zk5VeusbHZqX	gallery/extra/customer-nice-red-snapper-01.jpg	Customer w/ nice red snapper
+1b9DIWn0ChH95IFeHhBC5qoaELJEQz0QJ	gallery/extra/customer-nice-red-snapper-02.jpg	Customer w/ nice red snapper
+1DO0SbwjpZ8f69abyO2grnmxBnaZ3c1My	gallery/extra/customer-nice-red-snapper-03.jpg	Customer w/ nice red snapper
+17qFrt_WaT2EmImr4I4uaCKwzDCGsUQhu	gallery/extra/customer-nice-red-snapper-04.jpg	Customer holding nice red snapper
+1MpbnR3xwI2F5BsGa6ubhH2ci0Vp6lsvl	gallery/extra/bryan-big-red-snapper.jpg	Bryan w/ big red snapper
+1SOR_fXthg7lVXm_re1_btQfc7Yn8L8Rv	gallery/extra/bryan-scamp-grouper.jpg	Bryan w/ scamp grouper
+1em_bM02UBvYCft8UoXX4GuDjvLQPDgMw	gallery/extra/luke-snapper-grouper.jpg	Luke w/ snapper & grouper
+1hNGqS6_60_6PLIaYBW7PUma9xzeeHS3U	gallery/extra/group-holding-snapper.jpg	Group holding snapper
+1TF4eaqpto_KvJ1mwfsr7_yPMIhCpHBzb	gallery/extra/customer-mangrove-snapper-01.jpg	Customer w/ mangrove snapper
+1M1H_PFuwbLkwZUFBEKH4s0ddcZQv57oL	gallery/extra/customer-mangrove-snapper-02.jpg	Customer w/ nice mangrove snapper
+1s4rF2gVE1twEKBFuU6a-yI5m5idG0-gU	gallery/extra/speckled-hind-grouper.jpg	Speckled Hind Grouper- super rare
+1CoV-1EzeoMxyQalrG9HxztgcR_jSrOtj	gallery/extra/customer-cobia.jpg	Customer w/ Cobia
+1vXZ4kcYK1Z94aeyu87nZ4HPwDeiVsfDR	gallery/extra/couple-amberjack.jpg	Couple w/ amberjack
+18QAbQvnF229XGixQa3cdJU5yGbno5Cum	gallery/extra/fallen-outdoors-trip.jpg	The Fallen Outdoors trip
+1y4n50fWxyWOG-hYaVUpcsGgZvIb7QFdz	gallery/extra/minnow-devine.jpg	Minnow Devine
+165AUQTnMNUGgQq2N_ZQSKpb830k_FZ_Y	gallery/extra/group-swordfish-alt.jpg	Group w/ swordfish - not a great pic
+1JITlLN4UG92xrmKGjgDw6_DvtJbEhwyN	gallery/extra/unlabeled-img-0602.jpg	IMG_0602.HEIC
+1Ki2bcCIIMgAKqcf8-q1mwApzuHf4dx_Q	gallery/extra/unlabeled-img-6438.jpg	IMG_6438.HEIC
+1UsJT4_beQkZwaE74c40Ph1acMxPB9VFK	gallery/extra/unlabeled-img-5467.jpg	IMG_5467.heic
