@@ -87,19 +87,27 @@ export const TRIPS = {
   },
 }
 
-export const SPECIES = {
+// `image` is a real catch photo from the Drive import. Species without one
+// render as a text tile until a photo is supplied.
+export interface SpeciesItem {
+  name: string
+  description: string
+  image?: string
+}
+
+export const SPECIES: { offshore: SpeciesItem[]; inshore: SpeciesItem[] } = {
   offshore: [
-    { name: 'Yellowfin Tuna', description: 'Our specialty - catches up to 220+ lbs' },
-    { name: 'Swordfish', description: 'Deep-water giants' },
-    { name: 'Blue Marlin', description: 'The ultimate gamefish' },
+    { name: 'Yellowfin Tuna', description: 'Our specialty - catches up to 220+ lbs', image: '/images/gallery/extra/customer-big-yellow-02.jpg' },
+    { name: 'Swordfish', description: 'Deep-water giants', image: '/images/gallery/extra/big-swordfish-back-deck.jpg' },
+    { name: 'Blue Marlin', description: 'The ultimate gamefish', image: '/images/gallery/catch-06.jpg' },
     { name: 'White Marlin', description: 'Acrobatic fighters' },
-    { name: 'Wahoo', description: 'Speed demons of the Gulf' },
-    { name: 'Mahi-Mahi', description: 'Beautiful and delicious' },
-    { name: 'Amberjack', description: 'Powerful reef dwellers' },
-    { name: 'Red Snapper', description: 'Gulf Coast favorites' },
+    { name: 'Wahoo', description: 'Speed demons of the Gulf', image: '/images/gallery/extra/customer-wahoo.jpg' },
+    { name: 'Mahi-Mahi', description: 'Beautiful and delicious', image: '/images/gallery/catch-03.jpg' },
+    { name: 'Amberjack', description: 'Powerful reef dwellers', image: '/images/gallery/extra/couple-amberjack.jpg' },
+    { name: 'Red Snapper', description: 'Gulf Coast favorites', image: '/images/gallery/extra/big-american-red-snapper.jpg' },
   ],
   inshore: [
-    { name: 'Redfish', description: 'Including trophy Bull Reds' },
+    { name: 'Redfish', description: 'Including trophy Bull Reds', image: '/images/species/inshore-species.jpg' },
     { name: 'Speckled Trout', description: 'Louisiana staple' },
     { name: 'Flounder', description: 'Flatfish fun' },
     { name: 'Black Drum', description: 'Strong fighters' },

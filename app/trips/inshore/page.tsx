@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { PlaceholderImage, TouristTripSchema } from '@/components'
-import { TRIPS, SITE_CONFIG, TRIP_IMAGES } from '@/lib/constants'
+import { PlaceholderImage, TouristTripSchema, SpeciesGrid } from '@/components'
+import { TRIPS, SITE_CONFIG, TRIP_IMAGES, SPECIES } from '@/lib/constants'
 import { Clock, Users, Ship, Check, Phone, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -55,14 +55,7 @@ export default function InshoreTripPage() {
                 </p>
 
                 <h2>Target Species</h2>
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  {trip.species.map((species, index) => (
-                    <div key={index} className="flex items-start">
-                      <Check className="h-5 w-5 text-accent mt-1 mr-2 flex-shrink-0" />
-                      <span className="text-gray-700">{species}</span>
-                    </div>
-                  ))}
-                </div>
+                <SpeciesGrid species={SPECIES.inshore} />
 
                 <h2>What&apos;s Included</h2>
                 <ul className="mb-8">

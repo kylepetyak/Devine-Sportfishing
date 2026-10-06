@@ -6,6 +6,7 @@ export { default as TestimonialCard, PLACEHOLDER_TESTIMONIALS } from './Testimon
 export { default as ContactForm } from './ContactForm'
 export { default as PlaceholderImage, GalleryPlaceholder } from './PlaceholderImage'
 export { default as Gallery } from './Gallery'
+export { default as SpeciesGrid } from './SpeciesGrid'
 export { default as LocationLandingPage } from './LocationLandingPage'
 
 // Animation components
